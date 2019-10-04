@@ -17,7 +17,7 @@ func main() {
 	// create a private link
 	fmt.Println("creating a private link")
 	if _, err := client.CreatePrivateLink("yqheMTz7m61mHQbhDyMD35R0wATLaW5T", "demo/", "1", func(_ *emitter.Client, msg emitter.Message) {
-		fmt.Printf("[emitter] -> [B] received from private link: '%s' topic: '%s'\n", msg.Payload(), msg.Topic())
+		fmt.Printf("received from private link: '%s' topic: '%s'\n", msg.Payload(), msg.Topic())
 	}); err != nil {
 		panic(err)
 	}
